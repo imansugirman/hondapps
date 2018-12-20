@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use App\Http\Requests\MobilRequest as StoreRequest;
 use App\Http\Requests\MobilRequest as UpdateRequest;
-use App\Models\CarStatus;
+use App\Models\QS;
 
 /**
  * Class MobilCrudController
@@ -33,29 +33,104 @@ class MobilCrudController extends CrudController
        
         $this->crud->setColumns([
             [
-                'name'  => 'name',
-                'label' => 'Nama',
-                'type'  => 'text',
-            ],
-            [
-                'name'  => 'tipe',
-                'label' => 'Tipe',
-                'type' => 'text'
-            ],
-            [
                 'name'  => 'no_polisi',
                 'label' => 'No Polisi',
                 'type' => 'text'
             ],
-
             [
-                'name'  => 'carstatus_id',
-                'label' => 'Status',
-                'type' => 'select2',
-                'entity' => 'carstatus', // the method that defines the relationship in your Model
-                'attribute' => 'name', // foreign key attribute that is shown to user
-                'model' => CarStatus::class, // foreign key model
+                'label'     => 'QS',
+                'type'      => 'select',
+                'name'      => 'qs_id',
+                'entity'    => 'qs',
+                'attribute' => 'name',
+                'model'     => "App\Models\QS",
+                 
+            ],
+            // PM 
+            [
+                'label'     => 'PM',
+                'type'      => 'select',
+                'name'      => 'pm_id',
+                'entity'    => 'pm',
+                'attribute' => 'name',
+                'model'     => "App\Models\PM",
+                 
+            ],
 
+            // GR
+            [
+                'label'     => 'GR',
+                'type'      => 'select',
+                'name'      => 'gr_id',
+                'entity'    => 'gr',
+                'attribute' => 'name',
+                'model'     => "App\Models\GR",
+                 
+            ],
+
+            // Part
+            [
+                'label'     => 'Konfirmasi Part',
+                'type'      => 'select',
+                'name'      => 'part_id',
+                'entity'    => 'part',
+                'attribute' => 'name',
+                'model'     => "App\Models\Part",
+                 
+            ],
+
+            // Part
+            [
+                'label'     => 'Pekerjaan Tambahan',
+                'type'      => 'select',
+                'name'      => 'tambahan_id',
+                'entity'    => 'tambahan',
+                'attribute' => 'name',
+                'model'     => "App\Models\Tambahan",
+                 
+            ],
+            // Part
+            [
+                'label'     => 'Spooring & Balancing',
+                'type'      => 'select',
+                'name'      => 'sbalance_id',
+                'entity'    => 'sbalance',
+                'attribute' => 'name',
+                'model'     => "App\Models\SBalance",
+                 
+            ],
+
+            // Inspect
+            [
+                'label'     => 'Final Inspection',
+                'type'      => 'select',
+                'name'      => 'inspect_id',
+                'entity'    => 'inspect',
+                'attribute' => 'name',
+                'model'     => "App\Models\Inspect",
+                 
+            ],
+
+            // Inspect
+            [
+                'label'     => 'Cuci',
+                'type'      => 'select',
+                'name'      => 'cuci_id',
+                'entity'    => 'cuci',
+                'attribute' => 'name',
+                'model'     => "App\Models\Cuci",
+                 
+            ],
+
+            // Inspect
+            [
+                'label'     => 'Delivery',
+                'type'      => 'select',
+                'name'      => 'delivery_id',
+                'entity'    => 'delivery',
+                'attribute' => 'name',
+                'model'     => "App\Models\Delivery",
+                 
             ],
 
         ]);
@@ -63,29 +138,115 @@ class MobilCrudController extends CrudController
         
         $this->crud->addFields([
             [
-                'name'  => 'name',
-                'label' => 'Nama',
-                'type'  => 'text',
-            ],
-            [
-                'name'  => 'tipe',
-                'label' => 'Tipe',
-                'type' => 'text'
-            ],
-            [
                 'name'  => 'no_polisi',
                 'label' => 'No Polisi',
                 'type' => 'text'
             ],
 
+            // QS 
             [
-                'name'  => 'carstatus_id',
-                'label' => 'Status',
-                'type' => 'select2',
-                'entity' => 'carstatus', // the method that defines the relationship in your Model
-                'attribute' => 'name', // foreign key attribute that is shown to user
-                'model' => CarStatus::class, // foreign key model
-               
+                'label'     => 'QS',
+                'type'      => 'select2',
+                'name'      => 'qs_id',
+                'entity'    => 'qs',
+                'attribute' => 'name',
+                'model'     => "App\Models\QS",
+                
+                 
+            ],
+            // PM 
+            [
+                'label'     => 'PM',
+                'type'      => 'select2',
+                'name'      => 'pm_id',
+                'entity'    => 'pm',
+                'attribute' => 'name',
+                'model'     => "App\Models\PM",
+                
+                 
+            ],
+
+            // GR
+            [
+                'label'     => 'GR',
+                'type'      => 'select2',
+                'name'      => 'gr_id',
+                'entity'    => 'gr',
+                'attribute' => 'name',
+                'model'     => "App\Models\GR",
+                
+                 
+            ],
+
+            // Part
+            [
+                'label'     => 'Konfirmasi Part',
+                'type'      => 'select2',
+                'name'      => 'part_id',
+                'entity'    => 'part',
+                'attribute' => 'name',
+                'model'     => "App\Models\Part",
+                
+                 
+            ],
+
+            // Part
+            [
+                'label'     => 'Pekerjaan Tambahan',
+                'type'      => 'select2',
+                'name'      => 'tambahan_id',
+                'entity'    => 'tambahan',
+                'attribute' => 'name',
+                'model'     => "App\Models\Tambahan",
+                
+                 
+            ],
+            // Part
+            [
+                'label'     => 'Spooring & Balancing',
+                'type'      => 'select2',
+                'name'      => 'sbalance_id',
+                'entity'    => 'sbalance',
+                'attribute' => 'name',
+                'model'     => "App\Models\SBalance",
+                
+                 
+            ],
+
+            // Inspect
+            [
+                'label'     => 'Final Inspection',
+                'type'      => 'select2',
+                'name'      => 'inspect_id',
+                'entity'    => 'inspect',
+                'attribute' => 'name',
+                'model'     => "App\Models\Inspect",
+                
+                 
+            ],
+
+            // Inspect
+            [
+                'label'     => 'Cuci',
+                'type'      => 'select2',
+                'name'      => 'cuci_id',
+                'entity'    => 'cuci',
+                'attribute' => 'name',
+                'model'     => "App\Models\Cuci",
+                
+                 
+            ],
+
+            // Inspect
+            [
+                'label'     => 'Delivery',
+                'type'      => 'select2',
+                'name'      => 'delivery_id',
+                'entity'    => 'delivery',
+                'attribute' => 'name',
+                'model'     => "App\Models\Delivery",
+                
+                 
             ],
             
         ]);

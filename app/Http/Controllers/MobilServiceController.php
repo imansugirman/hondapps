@@ -14,10 +14,12 @@ class MobilServiceController extends Controller
      */
     public function index()
     {
+
         $mobil = Mobil::all();
 
-        return view('welcome', compact('mobil'));
-        
+
+        return view('front.index', compact('mobil'));
+
     }
 
     /**

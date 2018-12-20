@@ -15,7 +15,7 @@ class CreateCuciTable extends Migration
     {
         Schema::create('cuci', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

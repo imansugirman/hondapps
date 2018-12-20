@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\PartRequest as StoreRequest;
-use App\Http\Requests\PartRequest as UpdateRequest;
+use App\Http\Requests\DeliveryRequest as StoreRequest;
+use App\Http\Requests\DeliveryRequest as UpdateRequest;
 
 /**
- * Class PartCrudController
+ * Class DeliveryCrudController
  * @package App\Http\Controllers\Admin
  * @property-read CrudPanel $crud
  */
-class PartCrudController extends CrudController
+class DeliveryCrudController extends CrudController
 {
     public function setup()
     {
@@ -22,9 +22,9 @@ class PartCrudController extends CrudController
         | CrudPanel Basic Information
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Part');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/part');
-        $this->crud->setEntityNameStrings('part', 'Konfirmasi Part');
+        $this->crud->setModel('App\Models\Delivery');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/delivery');
+        $this->crud->setEntityNameStrings('delivery', 'Delivery');
 
         /*
         |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ class PartCrudController extends CrudController
         // TODO: remove setFromDb() and manually define Fields and Columns
         $this->crud->setFromDb();
 
-        // add asterisk for fields that are required in PartRequest
+        // add asterisk for fields that are required in DeliveryRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }

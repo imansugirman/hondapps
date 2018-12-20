@@ -34,6 +34,11 @@ class Tambahan extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+   
+    public function mobil() 
+    {
+        return $this->hasMany('App\Models\Mobil', 'id');
+    }
 
     /*
     |--------------------------------------------------------------------------

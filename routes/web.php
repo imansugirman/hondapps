@@ -11,8 +11,10 @@
 |
 */
 
+Route::resource('front', 'MobilServiceController');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
 });
 
 Auth::routes();

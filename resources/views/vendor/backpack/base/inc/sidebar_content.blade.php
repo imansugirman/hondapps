@@ -16,6 +16,10 @@
     <li><a href="{{ backpack_url('gr') }}"><i class="fa fa-user"></i> <span>GR</span></a></li>
     <li><a href="{{ backpack_url('part') }}"><i class="fa fa-user"></i> <span>Konfirmasi part</span></a></li>
     <li><a href="{{ backpack_url('tambahan') }}"><i class="fa fa-user"></i> <span>Pekerjaan Tambahan</span></a></li>
+    <li><a href="{{ backpack_url('sbalance') }}"><i class="fa fa-user"></i> <span>Spooring + Balancing</span></a></li>
+    <li><a href="{{ backpack_url('inspect') }}"><i class="fa fa-user"></i> <span>Inspect</span></a></li>
+    <li><a href="{{ backpack_url('cuci') }}"><i class="fa fa-user"></i> <span>Cuci</span></a></li>
+    <li><a href="{{ backpack_url('delivery') }}"><i class="fa fa-user"></i> <span>Delivery</span></a></li>
   </ul>
 </li>
 

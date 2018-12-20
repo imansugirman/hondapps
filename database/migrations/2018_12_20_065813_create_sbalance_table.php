@@ -15,7 +15,7 @@ class CreateSbalanceTable extends Migration
     {
         Schema::create('sbalance', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

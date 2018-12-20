@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class QS extends Model
+class Inspect extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class QS extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'qs';
+    protected $table = 'inspect';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
@@ -34,8 +34,8 @@ class QS extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-   
     public function mobil() 
+    
     {
         return $this->hasMany('App\Models\Mobil', 'id');
     }

@@ -15,7 +15,7 @@ class CreateInspectTable extends Migration
     {
         Schema::create('inspect', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

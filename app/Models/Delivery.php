@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class QS extends Model
+class Delivery extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class QS extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'qs';
+    protected $table = 'delivery';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];

@@ -15,7 +15,7 @@ class CreateQsTable extends Migration
     {
         Schema::create('qs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }
