@@ -27,7 +27,7 @@ class AddMobilIdToQsTable extends Migration
     public function down()
     {
         Schema::table('qs', function (Blueprint $table) {
-            $table->dropColumn('mobil_id');
+            $table->dropForeign(['mobil_id']);
         });
     }
 }

@@ -102,8 +102,10 @@ class Mobil extends Model
 
     public function qstech()
     {
-        return $this->hasMany('App\Models\QS', 'id');
+        return $this->hasMany('App\Models\QsTech', 'id');
     }
+
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
