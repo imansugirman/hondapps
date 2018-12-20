@@ -12,6 +12,7 @@ class BankDataTableSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('qs')->insert([
             'name' => 'Masuk',
         ]);

@@ -15,7 +15,7 @@ class MobilServiceController extends Controller
     public function index()
     {
 
-        $mobil = Mobil::all();
+        $mobil = Mobil::orderBy('id', 'created_at')->paginate(5);
 
 
         return view('front.index', compact('mobil'));

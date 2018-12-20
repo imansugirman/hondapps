@@ -19,8 +19,8 @@ class QS extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name'];
-    // protected $hidden = [];
+    protected $fillable = ['name', 'mobil_id'];
+    protected $hidden = ['mobil_id'];
     // protected $dates = [];
 
     /*
@@ -34,10 +34,15 @@ class QS extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-   
-    public function mobil() 
+
+    public function mobil()
     {
         return $this->hasMany('App\Models\Mobil', 'id');
+    }
+
+    public function no_polisi()
+    {
+        return $this->belongsTo('App\Models\Mobil', 'mobil_id', 'id');
     }
 
     /*

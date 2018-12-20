@@ -2,10 +2,11 @@
 <li><a href="{{ backpack_url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
 <li class="header">Admin ( SA )</li>
 <li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/mobil') }}'><i class='fa fa-hdd-o'></i> <span>Mobil</span></a></li>
-<li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/carstatus') }}'><i class='fa fa-terminal'></i> <span>Status</span></a></li>
 
 <li class="header">Teknisi</li>
 <li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/mobil') }}'><i class='fa fa-hdd-o'></i> <span>Mobil</span></a></li>
+<li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/qstech') }}'><i class='fa fa-hdd-o'></i> <span>QS Proses</span></a></li>
+
 
 <li class="header">Data Default Administrator</li>
 <li class="treeview">
@@ -35,4 +36,3 @@
 </li>
 <li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/backup') }}'><i class='fa fa-hdd-o'></i> <span>Backups</span></a></li>
 <li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}'><i class='fa fa-terminal'></i> <span>Logs</span></a></li>
-

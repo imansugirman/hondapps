@@ -13,9 +13,7 @@
 
 Route::resource('front', 'MobilServiceController');
 
-Route::get('/', function () {
-    return view('front.index');
-});
+Route::get('/', 'MobilServiceController@index');
 
 Auth::routes();
 

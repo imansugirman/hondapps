@@ -26,9 +26,10 @@
                           </tr>
                       </thead>
                       <tbody>
+
                         @foreach ($mobil as $mobil)
                           <tr>
-                              <td class="table-success"> {{ $mobil->no_polisi }} </td>
+                              <td> {{ $mobil->no_polisi }} </td>
                               <td class="table-success"> {{ $mobil->qs->name }} </td>
                               <td class="table-success"> {{ $mobil->pm->name }} </td>
                               <td class="table-success"> {{ $mobil->gr->name }} </td>

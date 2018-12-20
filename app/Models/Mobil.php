@@ -97,6 +97,13 @@ class Mobil extends Model
     {
         return $this->belongsTo('App\Models\Delivery', 'delivery_id', 'id');
     }
+
+
+
+    public function qstech()
+    {
+        return $this->hasMany('App\Models\QS', 'id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

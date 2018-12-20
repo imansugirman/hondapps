@@ -42,5 +42,13 @@
     "/themes/rocker/js/select2.min.js": "/themes/rocker/js/select2.min.js",
     "/themes/rocker/css/select2.min.css": "/themes/rocker/css/select2.min.css",
     "/themes/rocker/css/select2-bootstrap.min.css": "/themes/rocker/css/select2-bootstrap.min.css",
-    "/themes/rocker/css/custom.min.css": "/themes/rocker/css/custom.min.css"
+    "/themes/rocker/css/custom.min.css": "/themes/rocker/css/custom.min.css",
+    "/themes/rocker/fonts/nunito-bold-webfont.woff": "/themes/rocker/fonts/nunito-bold-webfont.woff",
+    "/themes/rocker/fonts/nunito-bold-webfont.woff2": "/themes/rocker/fonts/nunito-bold-webfont.woff2",
+    "/themes/rocker/fonts/nunito-light-webfont.woff": "/themes/rocker/fonts/nunito-light-webfont.woff",
+    "/themes/rocker/fonts/nunito-light-webfont.woff2": "/themes/rocker/fonts/nunito-light-webfont.woff2",
+    "/themes/rocker/fonts/nunito-regular-webfont.woff": "/themes/rocker/fonts/nunito-regular-webfont.woff",
+    "/themes/rocker/fonts/nunito-regular-webfont.woff2": "/themes/rocker/fonts/nunito-regular-webfont.woff2",
+    "/themes/rocker/fonts/nunito-semibold-webfont.woff": "/themes/rocker/fonts/nunito-semibold-webfont.woff",
+    "/themes/rocker/fonts/nunito-semibold-webfont.woff2": "/themes/rocker/fonts/nunito-semibold-webfont.woff2"
 }

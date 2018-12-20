@@ -32,8 +32,15 @@ class QSCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        // TODO: remove setFromDb() and manually define Fields and Columns
+        // $this->crud->setColumns([
+        //   [
+        //     'label' => 'Name',
+        //     'type'  => 'text'
+        //   ]
+        // ]);
+
         $this->crud->setFromDb();
+
 
         // add asterisk for fields that are required in QSRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

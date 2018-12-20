@@ -30,7 +30,7 @@ class MobilCrudController extends CrudController
         | CrudPanel Configuration
         |--------------------------------------------------------------------------
         */
-       
+
         $this->crud->setColumns([
             [
                 'name'  => 'no_polisi',
@@ -44,9 +44,9 @@ class MobilCrudController extends CrudController
                 'entity'    => 'qs',
                 'attribute' => 'name',
                 'model'     => "App\Models\QS",
-                 
+
             ],
-            // PM 
+            // PM
             [
                 'label'     => 'PM',
                 'type'      => 'select',
@@ -54,7 +54,7 @@ class MobilCrudController extends CrudController
                 'entity'    => 'pm',
                 'attribute' => 'name',
                 'model'     => "App\Models\PM",
-                 
+
             ],
 
             // GR
@@ -65,7 +65,7 @@ class MobilCrudController extends CrudController
                 'entity'    => 'gr',
                 'attribute' => 'name',
                 'model'     => "App\Models\GR",
-                 
+
             ],
 
             // Part
@@ -76,7 +76,7 @@ class MobilCrudController extends CrudController
                 'entity'    => 'part',
                 'attribute' => 'name',
                 'model'     => "App\Models\Part",
-                 
+
             ],
 
             // Part
@@ -87,7 +87,7 @@ class MobilCrudController extends CrudController
                 'entity'    => 'tambahan',
                 'attribute' => 'name',
                 'model'     => "App\Models\Tambahan",
-                 
+
             ],
             // Part
             [
@@ -97,7 +97,7 @@ class MobilCrudController extends CrudController
                 'entity'    => 'sbalance',
                 'attribute' => 'name',
                 'model'     => "App\Models\SBalance",
-                 
+
             ],
 
             // Inspect
@@ -108,7 +108,7 @@ class MobilCrudController extends CrudController
                 'entity'    => 'inspect',
                 'attribute' => 'name',
                 'model'     => "App\Models\Inspect",
-                 
+
             ],
 
             // Inspect
@@ -119,7 +119,7 @@ class MobilCrudController extends CrudController
                 'entity'    => 'cuci',
                 'attribute' => 'name',
                 'model'     => "App\Models\Cuci",
-                 
+
             ],
 
             // Inspect
@@ -130,12 +130,12 @@ class MobilCrudController extends CrudController
                 'entity'    => 'delivery',
                 'attribute' => 'name',
                 'model'     => "App\Models\Delivery",
-                 
+
             ],
 
         ]);
 
-        
+
         $this->crud->addFields([
             [
                 'name'  => 'no_polisi',
@@ -143,7 +143,7 @@ class MobilCrudController extends CrudController
                 'type' => 'text'
             ],
 
-            // QS 
+            // QS
             [
                 'label'     => 'QS',
                 'type'      => 'select2',
@@ -151,10 +151,10 @@ class MobilCrudController extends CrudController
                 'entity'    => 'qs',
                 'attribute' => 'name',
                 'model'     => "App\Models\QS",
-                
-                 
+
+
             ],
-            // PM 
+            // PM
             [
                 'label'     => 'PM',
                 'type'      => 'select2',
@@ -162,8 +162,8 @@ class MobilCrudController extends CrudController
                 'entity'    => 'pm',
                 'attribute' => 'name',
                 'model'     => "App\Models\PM",
-                
-                 
+
+
             ],
 
             // GR
@@ -174,8 +174,8 @@ class MobilCrudController extends CrudController
                 'entity'    => 'gr',
                 'attribute' => 'name',
                 'model'     => "App\Models\GR",
-                
-                 
+
+
             ],
 
             // Part
@@ -186,8 +186,8 @@ class MobilCrudController extends CrudController
                 'entity'    => 'part',
                 'attribute' => 'name',
                 'model'     => "App\Models\Part",
-                
-                 
+
+
             ],
 
             // Part
@@ -198,8 +198,8 @@ class MobilCrudController extends CrudController
                 'entity'    => 'tambahan',
                 'attribute' => 'name',
                 'model'     => "App\Models\Tambahan",
-                
-                 
+
+
             ],
             // Part
             [
@@ -209,8 +209,8 @@ class MobilCrudController extends CrudController
                 'entity'    => 'sbalance',
                 'attribute' => 'name',
                 'model'     => "App\Models\SBalance",
-                
-                 
+
+
             ],
 
             // Inspect
@@ -221,8 +221,8 @@ class MobilCrudController extends CrudController
                 'entity'    => 'inspect',
                 'attribute' => 'name',
                 'model'     => "App\Models\Inspect",
-                
-                 
+
+
             ],
 
             // Inspect
@@ -233,8 +233,8 @@ class MobilCrudController extends CrudController
                 'entity'    => 'cuci',
                 'attribute' => 'name',
                 'model'     => "App\Models\Cuci",
-                
-                 
+
+
             ],
 
             // Inspect
@@ -245,10 +245,10 @@ class MobilCrudController extends CrudController
                 'entity'    => 'delivery',
                 'attribute' => 'name',
                 'model'     => "App\Models\Delivery",
-                
-                 
+
+
             ],
-            
+
         ]);
 
         // TODO: remove setFromDb() and manually define Fields and Columns

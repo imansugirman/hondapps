@@ -75,3 +75,6 @@ mix.copy('node_modules/select2-bootstrap-theme/dist/select2-bootstrap.min.css', 
 
 // Custom CSS Field
 mix.styles('resources/css/custom.css', 'public/themes/rocker/css/custom.min.css');
+
+// Front End
+mix.copyDirectory('resources/fonts/*', 'public/themes/rocker/fonts');
