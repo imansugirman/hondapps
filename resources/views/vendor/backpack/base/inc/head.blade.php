@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@if (config('backpack.base.meta_robots_content'))
+<meta name="robots" content="{{ config('backpack.base.meta_robots_content', 'noindex, nofollow') }}">
+@endif
+
+{{-- Encrypted CSRF token for Laravel, in order for Ajax requests to work --}}
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
+<title>
+  {{ isset($title) ? $title.' :: '.config('backpack.base.project_name').' Admin' : config('backpack.base.project_name').' Admin' }}
+</title>
+
+@yield('before_styles')
+@stack('before_styles')
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+<link href="{{ mix('themes/rocker/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ mix('themes/rocker/css/font-awesome.min.css') }}" rel="stylesheet">
+<link href="{{ mix('themes/rocker/css/ionicons.min.css') }}" rel="stylesheet">
+<link href="{{ mix('themes/rocker/css/admin.min.css') }}" rel="stylesheet">
+<link href="{{ mix('themes/rocker/css/skins.min.css') }}" rel="stylesheet">
+<link href="{{ mix('themes/rocker/css/pace.min.css') }}" rel="stylesheet">
+<link href="{{ mix('themes/rocker/css/pnotify.custom.min.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+<link href="{{ mix('themes/rocker/css/backpack.base.css') }}" rel="stylesheet">
+@if (config('backpack.base.overlays') && count(config('backpack.base.overlays')))
+    @foreach (config('backpack.base.overlays') as $overlay)
+    <link rel="stylesheet" href="{{ asset($overlay) }}">
+    @endforeach
+@endif
+
+
+@yield('after_styles')
+@stack('after_styles')
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->

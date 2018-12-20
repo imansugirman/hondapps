@@ -1,0 +1,19 @@
+.select2-container .select2-selection--single .select2-selection__rendered {
+    margin-top: 0px !important;
+}
+
+.shadow-custom {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  border-radius: 4px;
+  
+}
+
+.border-honda {
+  border-top: 5px solid #e52325;
+}
+
+.btn-honda {
+    background-color: #e52325;
+    color: #ffffff;
+    border-color: #bc1339;
+}
