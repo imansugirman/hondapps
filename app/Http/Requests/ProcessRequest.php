@@ -26,7 +26,11 @@ class ProcessRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            // 'mobil_id' => 'nullable',
+            // 'qs_id' => 'nullable',
+            // 'gr_id' => 'nullable',
+            // 'pm_id' => 'nullable',
+            // 'inspection_id' => 'nullable',
         ];
     }
 

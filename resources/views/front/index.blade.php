@@ -47,60 +47,12 @@
 
                     </thread>
                       <tbody>
-                        <tr>
-                            @foreach ($mobil as $mobil)
-                                <td>{{ $mobil->no_polisi }}</td>
-                            @endforeach
-                            @foreach ($qs as $qs)
-                              <td>{{ $qs->start_at }}</td>
-                              <td>{{ $qs->finish_at }}</td>
-                            @endforeach
-                            @foreach ($pm as $pm)
-                                <td>{{ $pm->start_at }}</td>
-                                <td>{{ $pm->finish_at }}</td>
-                            @endforeach
-                            @foreach ($gr as $gr)
-                                <td>{{ $gr->start_at }}</td>
-                                <td>{{ $gr->finish_at }}</td>
-                            @endforeach
-                            @foreach ($part as $part)
-                                <td>{{ $part->start_at }}</td>
-                                <td>{{ $part->finish_at }}</td>
-                            @endforeach
-                            @foreach ($tambahan as $tambahan)
-                                <td>{{ $tambahan->start_at }}</td>
-                                <td>{{ $tambahan->finish_at }}</td>
-                            @endforeach
-
-                            @forelse ($sbalance as $sbalance)
-                                <td>{{ $sbalance->start_at }}</td>
-                                <td>{{ $sbalance->finish_at }}</td>
-                            @empty
-                                <td>None</td>
-                                <td>None</td>
-                            @endforelse
-
-                            {{-- @foreach ($inspect as $inspect)
-                                <td>{{ $inspect->start_at }}</td>
-                                <td>{{ $inspect->finish_at }}</td>
-                            @endforeach --}}
-
-                            @forelse ($inspect as $inspect)
-                                <td>{{ $inspect->start_at }}</td>
-                                <td>{{ $inspect->finish_at }}</td>
-                            @empty
-                                <td>None</td>
-                                <td>None</td>
-                            @endforelse
-
-                            @forelse ($cuci as $cuci)
-                                <td>{{ $cuci->start_at }}</td>
-                                <td>{{ $cuci->finish_at }}</td>
-                            @empty
-                                <td>None</td>
-                                <td>None</td>
-                            @endforelse
-                        </tr>
+                        @foreach ($mobil as $mobil)
+                          <tr>
+                           <td>{{ $mobil->no_polisi }}</td> 
+                          </tr>
+                        @endforeach
+                        
 
                         {{-- @foreach ($query as $key => $value)
                             <td>{{ $mobil->no_polisi }}</td>

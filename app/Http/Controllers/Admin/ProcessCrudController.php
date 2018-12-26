@@ -32,8 +32,56 @@ class ProcessCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        $this->crud->setColumns([
+          [
+            'label' => 'No Polisi',
+            'type'  => 'select',
+            'name' => 'mobil_id', // the db column for the foreign key
+            'entity' => 'mobil', // the method that defines the relationship in your Model
+            'attribute' => 'no_polisi', // foreign key attribute that is shown to user
+            'model' => "App\Models\Mobil", // foreign key model
+          ],
+
+          [
+            'label' => 'QS',
+            'type'  => 'select',
+            'name' => 'qs_id', // the db column for the foreign key
+            'entity' => 'qs', // the method that defines the relationship in your Model
+            'attribute' => 'status', // foreign key attribute that is shown to user
+            'model' => "App\Models\QS", // foreign key model
+          ],
+
+        ]);
+
+        $this->crud->addFields([
+            [
+                'label' => 'No Polisi',
+                'type'  => 'select2',
+                'name' => 'mobil_id', // the db column for the foreign key
+                'entity' => 'mobil', // the method that defines the relationship in your Model
+                'attribute' => 'no_polisi', // foreign key attribute that is shown to user
+                'model' => "App\Models\Mobil", // foreign key model
+            ],
+
+            [
+                'label'     => 'QS Start',
+                'type'      => 'datetime_picker',
+                'name'      => 'qs_id',
+                'entity'    => 'qs',
+                'attribute' => 'start_at',
+                'model'     => "App\Models\QS",
+            ],
+
+            [
+                'label'     => 'QS Finish',
+                'type'      => 'datetime_picker',
+                'name'      => 'qs_id',
+                'entity'    => 'qs',
+                'attribute' => 'finish_at',
+                'model'     => "App\Models\QS",
+            ],
+
+        ]);
 
         // add asterisk for fields that are required in ProcessRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

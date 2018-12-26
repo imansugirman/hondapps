@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsersTableSeeder::class);
         $this->call(MobilTableSeeder::class);
-        $this->call(QSTableSeeder::class);
+        // $this->call(QSTableSeeder::class);
         // $this->call(PermissionTableSeeder::class);
     }
 }

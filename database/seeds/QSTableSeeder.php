@@ -27,9 +27,9 @@ class QSTableSeeder extends Seeder
             'status' => 'Selesai',
         ]);
 
-        DB::table('qs')->insert([
-            'status' => 'Arsip',
-        ]);
+        // DB::table('qs')->insert([
+        //     'status' => 'Arsip',
+        // ]);
 
     }
 }
