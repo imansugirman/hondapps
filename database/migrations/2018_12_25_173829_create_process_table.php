@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddMobilIdToQsTable extends Migration
+class CreateProcessTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class AddMobilIdToQsTable extends Migration
      */
     public function up()
     {
-        Schema::table('qs', function (Blueprint $table) {
+        Schema::create('process', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('mobil_id')->unsigned()->nullable();
             $table->foreign('mobil_id')->references('id')->on('mobil')->onDelete('cascade');
+            $table->tinyInteger('status')->default(0);
+            $table->dateTime('start_at')->nullable()->default(null);
+            $table->dateTime('finish_at')->nullable()->default(null);
+            $table->timestamps();
         });
     }
 
@@ -26,8 +31,6 @@ class AddMobilIdToQsTable extends Migration
      */
     public function down()
     {
-        Schema::table('qs', function (Blueprint $table) {
-            $table->dropForeign(['mobil_id']);
-        });
+        Schema::dropIfExists('process');
     }
 }

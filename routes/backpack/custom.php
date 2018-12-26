@@ -11,7 +11,8 @@ Route::group([
     'middleware' => ['web', config('backpack.base.middleware_key', 'admin')],
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
-    CRUD::resource('qstech', 'QSTechCrudController');
+    CRUD::resource('process', 'ProcessCrudController');
+    CRUD::resource('saprocess', 'SAProcessCrudController');
     CRUD::resource('qs', 'QSCrudController');
     CRUD::resource('pm', 'PMCrudController');
     CRUD::resource('gr', 'GRCrudController');
@@ -22,4 +23,8 @@ Route::group([
     CRUD::resource('cuci', 'CuciCrudController');
     CRUD::resource('delivery', 'DeliveryCrudController');
     CRUD::resource('mobil', 'MobilCrudController');
+
+
+    Route::get('qs/{id}/start', 'QSCrudController@start');
+
 }); // this should be the absolute last line of this file

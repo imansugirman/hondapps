@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class TambahanRequest extends FormRequest
+class ProcessRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,7 @@ class TambahanRequest extends FormRequest
     public function rules()
     {
         return [
-            'mobil_id' => 'required',
-            'status' => 'required',
-            'start_at' => 'required',
-            'finish_at' => 'required',
+            // 'name' => 'required|min:5|max:255'
         ];
     }
 

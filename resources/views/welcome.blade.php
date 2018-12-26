@@ -4,6 +4,14 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
+                  <div class="card-header bg-transparent">
+                      <h5 class="mb-0 text-center">QS</h5>
+                  </div>
+                  <div class="card-body">
+                    @foreach($qs as $qs)
+                        <td><strong>{{ $qs->start_at }}</strong></td>
+                    @endforeach
+                  </div>
                     <div class="card-header bg-transparent">
                         <h5 class="mb-0 text-center">Status Service Honda Imora Sentul</h5>
                     </div>
@@ -24,20 +32,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              @foreach ($mobil as $mobil)
+                              @foreach($mobil as $key => $qs)
+
                                 <tr>
-                                    <td class="table-success"> {{ $mobil->no_polisi }} </td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
-                                    <td class="table-success">Status</td>
+                                @foreach($qs as $start_at => $value)
+                                    <th><strong>{{ $start_at }}</strong></th>
+                                @endforeach
                                 </tr>
-                              @endforeach
+
+                                <tr>
+                                @foreach($qs as $finish_at => $value)
+                                    <td>{{ $finish_at }}</td>
+                                @endforeach
+                                </tr>
+                            @endforeach
 
                             </tbody>
                         </table>

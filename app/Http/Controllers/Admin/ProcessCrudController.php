@@ -5,39 +5,16 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\CuciRequest as StoreRequest;
-use App\Http\Requests\CuciRequest as UpdateRequest;
+use App\Http\Requests\ProcessRequest as StoreRequest;
+use App\Http\Requests\ProcessRequest as UpdateRequest;
 
 /**
- * Class CuciCrudController
+ * Class ProcessCrudController
  * @package App\Http\Controllers\Admin
  * @property-read CrudPanel $crud
  */
-class CuciCrudController extends CrudController implements \Makeable\EloquentStatus\Status
+class ProcessCrudController extends CrudController
 {
-    public function pending($query)
-    {
-        return $query
-            ->whereNull('tutor_approved_at')
-            ->whereNull('teacher_approved_at')
-            ->whereNull('assessor_approved_at');
-    }
-
-    public function reviewing($query)
-    {
-        return $query
-            ->whereNotNull('tutor_approved_at')
-            ->whereNull('assessor_approved_at');
-    }
-    
-    public function approved($query)
-    {
-        return $query
-            ->whereNotNull('tutor_approved_at')
-            ->whereNotNull('teacher_approved_at')
-            ->whereNotNull('assessor_approved_at');
-    }
-    
     public function setup()
     {
         /*
@@ -45,9 +22,9 @@ class CuciCrudController extends CrudController implements \Makeable\EloquentSta
         | CrudPanel Basic Information
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Cuci');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/cuci');
-        $this->crud->setEntityNameStrings('cuci', 'Cuci');
+        $this->crud->setModel('App\Models\Process');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/process');
+        $this->crud->setEntityNameStrings('process', 'Proses');
 
         /*
         |--------------------------------------------------------------------------
@@ -58,7 +35,7 @@ class CuciCrudController extends CrudController implements \Makeable\EloquentSta
         // TODO: remove setFromDb() and manually define Fields and Columns
         $this->crud->setFromDb();
 
-        // add asterisk for fields that are required in CuciRequest
+        // add asterisk for fields that are required in ProcessRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }

@@ -15,13 +15,13 @@ class Inspect extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'inspect';
+    protected $table = 'inspection';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name'];
+    protected $fillable = ['mobil_id', 'status', 'start_at', 'finish_at'];
     // protected $hidden = [];
-    // protected $dates = [];
+    protected $dates = ['start_at', 'finish_at'];
 
     /*
     |--------------------------------------------------------------------------
@@ -34,10 +34,19 @@ class Inspect extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function mobil() 
-    
+    public function mobil()
     {
-        return $this->hasMany('App\Models\Mobil', 'id');
+        return $this->belongsTo('App\Models\Mobil', 'mobil_id', 'id');
+    }
+
+    public function getStartAtAttribute()
+    {
+        return \Carbon\Carbon::parse($this->attributes['start_at'])->format('H:i');
+    }
+
+    public function getFinishAtAttribute()
+    {
+        return \Carbon\Carbon::parse($this->attributes['finish_at'])->format('H:i');
     }
 
     /*

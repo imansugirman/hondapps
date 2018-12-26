@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use App\Http\Requests\PMRequest as StoreRequest;
-use App\Http\Requests\PMRequest as UpdateRequest;
+use App\Http\Requests\SAProcessRequest as StoreRequest;
+use App\Http\Requests\SAProcessRequest as UpdateRequest;
+use App\Models\QS;
 
-class PMCrudController extends CrudController
+/**
+ * Class SAProcessCrudController
+ * @package App\Http\Controllers\Admin
+ * @property-read CrudPanel $crud
+ */
+class SAProcessCrudController extends CrudController
 {
     public function setup()
     {
@@ -15,9 +21,9 @@ class PMCrudController extends CrudController
         | CrudPanel Basic Information
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\PM');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/pm');
-        $this->crud->setEntityNameStrings('pm', 'PM');
+        $this->crud->setModel('App\Models\SAProcess');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/saprocess');
+        $this->crud->setEntityNameStrings('saprocess', 'SA Process');
 
         /*
         |--------------------------------------------------------------------------
@@ -36,28 +42,14 @@ class PMCrudController extends CrudController
           ],
 
           [
-            'name' => 'status', // The db column name
-            'label' => "Status", // Table column heading
-            'type' => 'select_from_array',
-            'options' => ['0' => 'Arsip', '1' => 'Masuk', '2' => 'Mulai', '3' => 'Selesai'],
+            'label' => 'QS',
+            'type'  => 'select',
+            'name' => 'qs_id', // the db column for the foreign key
+            'entity' => 'qs', // the method that defines the relationship in your Model
+            'attribute' => 'status', // foreign key attribute that is shown to user
+            'model' => "App\Models\QS", // foreign key model
           ],
-          [   // DateTime
-                'name' => 'start_at',
-                'label' => 'Start',
-                'type' => 'datetime',
-                // optional:
-                // 'format' => 'DD/MM/YYYY HH:mm',
-                // 'default' => '2017-05-12 11:59:59',
-            ],
 
-            [   // DateTime
-                'name' => 'finish_at',
-                'label' => 'Finish',
-                'type' => 'datetime',
-                // 'format' => 'DD/MM/YYYY HH:mm',
-
-                // 'default' => '2017-05-12 11:59:59',
-            ],
         ]);
 
         $this->crud->addFields([
@@ -71,44 +63,19 @@ class PMCrudController extends CrudController
             ],
 
             [
-                'name' => 'status',
-                'label' => "Status",
-                'type' => 'select2_from_array',
-                'options' => ['0' => 'Arsip', '1' => 'Masuk', '2' => 'Mulai', '3' => 'Selesai',],
-                'allows_null' => false,
-                'default' => 'one',
+                'label'     => 'QS',
+                'type'      => 'select2',
+                'name'      => 'qs_id',
+                'entity'    => 'qs',
+                'attribute' => 'status',
+                'model'     => "App\Models\QS",
             ],
 
-            [   // DateTime
-                'name' => 'start_at',
-                'label' => 'Start',
-                'type' => 'datetime_picker',
-                // optional:
-                'datetime_picker_options' => [
-                    'format' => 'DD/MM/YYYY HH:mm',
-                    'language' => 'id'
-                ],
-                'allows_null' => true,
-                // 'default' => '2017-05-12 11:59:59',
-            ],
-
-            [   // DateTime
-                'name' => 'finish_at',
-                'label' => 'Finish',
-                'type' => 'datetime_picker',
-                // optional:
-                'datetime_picker_options' => [
-                    'format' => 'DD/MM/YYYY HH:mm',
-                    'language' => 'id'
-                ],
-                'allows_null' => true,
-                // 'default' => '2017-05-12 11:59:59',
-            ],
         ]);
 
 
 
-        // add asterisk for fields that are required in PMRequest
+        // add asterisk for fields that are required in SAProcessRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }

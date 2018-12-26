@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0aefcb31da060bf3f3225227bb0a8a03",
+    "content-hash": "ef2611c3687d7fcd8b4502fb34cb3ac1",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -49,6 +49,43 @@
                 "web"
             ],
             "time": "2018-07-15T18:48:11+00:00"
+        },
+        {
+            "name": "astatroth/laravel-timer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Astatroth/laravel-timer.git",
+                "reference": "6925f26a5e81a9fc22edbbbb80d5c62ee3a5d3f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Astatroth/laravel-timer/zipball/6925f26a5e81a9fc22edbbbb80d5c62ee3a5d3f6",
+                "reference": "6925f26a5e81a9fc22edbbbb80d5c62ee3a5d3f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/",
+                    "Astatroth\\LaravelTimer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Astatroth",
+                    "email": "astatroth@gmail.com"
+                }
+            ],
+            "description": "A small tool to measure operations execution time.",
+            "time": "2018-08-13T07:20:32+00:00"
         },
         {
             "name": "backpack/backupmanager",
@@ -1300,6 +1337,58 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "freshbitsweb/laratables",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/freshbitsweb/laratables.git",
+                "reference": "186805bdab76e35dd8094f060972032c30ccd87f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/freshbitsweb/laratables/zipball/186805bdab76e35dd8094f060972032c30ccd87f",
+                "reference": "186805bdab76e35dd8094f060972032c30ccd87f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.5.*|5.6.*|5.7.*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Freshbitsweb\\Laratables\\LaratablesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Freshbitsweb\\Laratables\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gaurav Makhecha",
+                    "email": "info@freshbits.in"
+                }
+            ],
+            "description": "Ajax support of DataTables for Laravel 5.5+",
+            "time": "2018-11-30T05:01:53+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3542,6 +3631,63 @@
                 "spatie"
             ],
             "time": "2018-12-11T02:03:59+00:00"
+        },
+        {
+            "name": "spatie/laravel-query-builder",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-query-builder.git",
+                "reference": "8c28dea5679b1481efc3c3c2c19a4cb0c1a86c9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/8c28dea5679b1481efc3c3c2c19a4cb0c1a86c9e",
+                "reference": "8c28dea5679b1481efc3c3c2c19a4cb0c1a86c9e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/http": "~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/support": "~5.5.0|~5.6.0|~5.7.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+                "phpunit/phpunit": "^6.1|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\QueryBuilder\\QueryBuilderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\QueryBuilder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily build Eloquent queries from API requests",
+            "homepage": "https://github.com/spatie/laravel-query-builder",
+            "keywords": [
+                "laravel-query-builder",
+                "spatie"
+            ],
+            "time": "2018-11-27T09:10:35+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -6963,6 +7109,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "astatroth/laravel-timer": 20,
         "laracasts/generators": 20
     },
     "prefer-stable": true,

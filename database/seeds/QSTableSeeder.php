@@ -13,11 +13,23 @@ class QSTableSeeder extends Seeder
     public function run()
     {
         DB::table('qs')->insert([
-            'name' => 'Mulai',
+            'mobil_id' => '1',
+            'status' => 'Masuk',
         ]);
 
         DB::table('qs')->insert([
-            'name' => 'Selesai',
+            'mobil_id' => '2',
+            'status' => 'Mulai',
         ]);
+
+        DB::table('qs')->insert([
+            'mobil_id' => '3',
+            'status' => 'Selesai',
+        ]);
+
+        DB::table('qs')->insert([
+            'status' => 'Arsip',
+        ]);
+
     }
 }

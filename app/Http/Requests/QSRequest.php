@@ -26,8 +26,10 @@ class QSRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable',
-            'mobil_id' => 'nullable'
+            'mobil_id' => 'required',
+            'status' => 'required',
+            'start_at' => 'required',
+            'finish_at' => 'required',
         ];
     }
 

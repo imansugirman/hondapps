@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQsTable extends Migration
+class CreateTimerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateQsTable extends Migration
      */
     public function up()
     {
-        Schema::create('qs', function (Blueprint $table) {
+        Schema::create('timer', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();
+            $table->timestamp('started_at');
+            $table->timestamp('stopped_at')->default(null)->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateQsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('qs');
+        Schema::dropIfExists('timer');
     }
 }

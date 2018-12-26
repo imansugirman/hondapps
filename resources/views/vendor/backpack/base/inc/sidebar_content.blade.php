@@ -5,7 +5,7 @@
 
 <li class="header">Teknisi</li>
 <li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/mobil') }}'><i class='fa fa-hdd-o'></i> <span>Mobil</span></a></li>
-<li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/qstech') }}'><i class='fa fa-hdd-o'></i> <span>QS Proses</span></a></li>
+<li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/process') }}'><i class='fa fa-hdd-o'></i> <span>Proses</span></a></li>
 
 
 <li class="header">Data Default Administrator</li>

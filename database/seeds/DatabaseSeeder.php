@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UsersTableSeeder::class);
-        $this->call(BankDataTableSeeder::class);
+        $this->call(MobilTableSeeder::class);
+        $this->call(QSTableSeeder::class);
         // $this->call(PermissionTableSeeder::class);
     }
 }

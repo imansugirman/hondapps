@@ -26,7 +26,10 @@ class InspectRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'mobil_id' => 'required',
+            'status' => 'required',
+            'start_at' => 'required',
+            'finish_at' => 'required',
         ];
     }
 

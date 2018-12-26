@@ -26,14 +26,86 @@ class SBalanceCrudController extends CrudController
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/sbalance');
         $this->crud->setEntityNameStrings('sbalance', 'Spooring & Balancing');
 
-        /*
-        |--------------------------------------------------------------------------
-        | CrudPanel Configuration
-        |--------------------------------------------------------------------------
-        */
+        $this->crud->setColumns([
+          [
+            'label' => 'No Polisi',
+            'type'  => 'select',
+            'name' => 'mobil_id', // the db column for the foreign key
+            'entity' => 'mobil', // the method that defines the relationship in your Model
+            'attribute' => 'no_polisi', // foreign key attribute that is shown to user
+            'model' => "App\Models\Mobil", // foreign key model
+          ],
 
-        // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+          [
+            'name' => 'status', // The db column name
+            'label' => "Status", // Table column heading
+            'type' => 'select_from_array',
+            'options' => ['0' => 'Arsip', '1' => 'Masuk', '2' => 'Mulai', '3' => 'Selesai'],
+          ],
+          [   // DateTime
+                'name' => 'start_at',
+                'label' => 'Start',
+                'type' => 'datetime',
+                // optional:
+                // 'format' => 'DD/MM/YYYY HH:mm',
+                // 'default' => '2017-05-12 11:59:59',
+            ],
+
+            [   // DateTime
+                'name' => 'finish_at',
+                'label' => 'Finish',
+                'type' => 'datetime',
+                // 'format' => 'DD/MM/YYYY HH:mm',
+
+                // 'default' => '2017-05-12 11:59:59',
+            ],
+        ]);
+
+        $this->crud->addFields([
+            [
+                'label' => 'No Polisi',
+                'type'  => 'select2',
+                'name' => 'mobil_id', // the db column for the foreign key
+                'entity' => 'mobil', // the method that defines the relationship in your Model
+                'attribute' => 'no_polisi', // foreign key attribute that is shown to user
+                'model' => "App\Models\Mobil", // foreign key model
+            ],
+
+            [
+                'name' => 'status',
+                'label' => "Status",
+                'type' => 'select2_from_array',
+                'options' => ['0' => 'Arsip', '1' => 'Masuk', '2' => 'Mulai', '3' => 'Selesai',],
+                'allows_null' => false,
+                'default' => 'one',
+            ],
+
+            [   // DateTime
+                'name' => 'start_at',
+                'label' => 'Start',
+                'type' => 'datetime_picker',
+                // optional:
+                'datetime_picker_options' => [
+                    'format' => 'DD/MM/YYYY HH:mm',
+                    'language' => 'id'
+                ],
+                'allows_null' => true,
+                // 'default' => '2017-05-12 11:59:59',
+            ],
+
+            [   // DateTime
+                'name' => 'finish_at',
+                'label' => 'Finish',
+                'type' => 'datetime_picker',
+                // optional:
+                'datetime_picker_options' => [
+                    'format' => 'DD/MM/YYYY HH:mm',
+                    'language' => 'id'
+                ],
+                'allows_null' => true,
+                // 'default' => '2017-05-12 11:59:59',
+            ],
+        ]);
 
         // add asterisk for fields that are required in SBalanceRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

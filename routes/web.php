@@ -11,7 +11,7 @@
 |
 */
 
-Route::resource('front', 'MobilServiceController');
+Route::resource('/front', 'MobilServiceController');
 
 Route::get('/', 'MobilServiceController@index');
 

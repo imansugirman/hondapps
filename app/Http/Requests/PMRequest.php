@@ -26,7 +26,9 @@ class PMRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'status' => 'nullable',
+            'start_at' => 'nullable',
+            'finish_at' => 'nullable'
         ];
     }
 

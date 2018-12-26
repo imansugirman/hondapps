@@ -31,228 +31,228 @@ class MobilCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setColumns([
-            [
-                'name'  => 'no_polisi',
-                'label' => 'No Polisi',
-                'type' => 'text'
-            ],
-            [
-                'label'     => 'QS',
-                'type'      => 'select',
-                'name'      => 'qs_id',
-                'entity'    => 'qs',
-                'attribute' => 'name',
-                'model'     => "App\Models\QS",
+        // $this->crud->setColumns([
+        //     [
+        //         'name'  => 'no_polisi',
+        //         'label' => 'No Polisi',
+        //         'type' => 'text'
+        //     ],
+        //     [
+        //         'label'     => 'QS',
+        //         'type'      => 'select',
+        //         'name'      => 'qs_id',
+        //         'entity'    => 'qs',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\QS",
 
-            ],
-            // PM
-            [
-                'label'     => 'PM',
-                'type'      => 'select',
-                'name'      => 'pm_id',
-                'entity'    => 'pm',
-                'attribute' => 'name',
-                'model'     => "App\Models\PM",
+        //     ],
+        //     // PM
+        //     [
+        //         'label'     => 'PM',
+        //         'type'      => 'select',
+        //         'name'      => 'pm_id',
+        //         'entity'    => 'pm',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\PM",
 
-            ],
+        //     ],
 
-            // GR
-            [
-                'label'     => 'GR',
-                'type'      => 'select',
-                'name'      => 'gr_id',
-                'entity'    => 'gr',
-                'attribute' => 'name',
-                'model'     => "App\Models\GR",
+        //     // GR
+        //     [
+        //         'label'     => 'GR',
+        //         'type'      => 'select',
+        //         'name'      => 'gr_id',
+        //         'entity'    => 'gr',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\GR",
 
-            ],
+        //     ],
 
-            // Part
-            [
-                'label'     => 'Konfirmasi Part',
-                'type'      => 'select',
-                'name'      => 'part_id',
-                'entity'    => 'part',
-                'attribute' => 'name',
-                'model'     => "App\Models\Part",
+        //     // Part
+        //     [
+        //         'label'     => 'Konfirmasi Part',
+        //         'type'      => 'select',
+        //         'name'      => 'part_id',
+        //         'entity'    => 'part',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Part",
 
-            ],
+        //     ],
 
-            // Part
-            [
-                'label'     => 'Pekerjaan Tambahan',
-                'type'      => 'select',
-                'name'      => 'tambahan_id',
-                'entity'    => 'tambahan',
-                'attribute' => 'name',
-                'model'     => "App\Models\Tambahan",
+        //     // Part
+        //     [
+        //         'label'     => 'Pekerjaan Tambahan',
+        //         'type'      => 'select',
+        //         'name'      => 'tambahan_id',
+        //         'entity'    => 'tambahan',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Tambahan",
 
-            ],
-            // Part
-            [
-                'label'     => 'Spooring & Balancing',
-                'type'      => 'select',
-                'name'      => 'sbalance_id',
-                'entity'    => 'sbalance',
-                'attribute' => 'name',
-                'model'     => "App\Models\SBalance",
+        //     ],
+        //     // Part
+        //     [
+        //         'label'     => 'Spooring & Balancing',
+        //         'type'      => 'select',
+        //         'name'      => 'sbalance_id',
+        //         'entity'    => 'sbalance',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\SBalance",
 
-            ],
+        //     ],
 
-            // Inspect
-            [
-                'label'     => 'Final Inspection',
-                'type'      => 'select',
-                'name'      => 'inspect_id',
-                'entity'    => 'inspect',
-                'attribute' => 'name',
-                'model'     => "App\Models\Inspect",
+        //     // Inspect
+        //     [
+        //         'label'     => 'Final Inspection',
+        //         'type'      => 'select',
+        //         'name'      => 'inspect_id',
+        //         'entity'    => 'inspect',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Inspect",
 
-            ],
+        //     ],
 
-            // Inspect
-            [
-                'label'     => 'Cuci',
-                'type'      => 'select',
-                'name'      => 'cuci_id',
-                'entity'    => 'cuci',
-                'attribute' => 'name',
-                'model'     => "App\Models\Cuci",
+        //     // Inspect
+        //     [
+        //         'label'     => 'Cuci',
+        //         'type'      => 'select',
+        //         'name'      => 'cuci_id',
+        //         'entity'    => 'cuci',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Cuci",
 
-            ],
+        //     ],
 
-            // Inspect
-            [
-                'label'     => 'Delivery',
-                'type'      => 'select',
-                'name'      => 'delivery_id',
-                'entity'    => 'delivery',
-                'attribute' => 'name',
-                'model'     => "App\Models\Delivery",
+        //     // Inspect
+        //     [
+        //         'label'     => 'Delivery',
+        //         'type'      => 'select',
+        //         'name'      => 'delivery_id',
+        //         'entity'    => 'delivery',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Delivery",
 
-            ],
+        //     ],
 
-        ]);
-
-
-        $this->crud->addFields([
-            [
-                'name'  => 'no_polisi',
-                'label' => 'No Polisi',
-                'type' => 'text'
-            ],
-
-            // QS
-            [
-                'label'     => 'QS',
-                'type'      => 'select2',
-                'name'      => 'qs_id',
-                'entity'    => 'qs',
-                'attribute' => 'name',
-                'model'     => "App\Models\QS",
+        // ]);
 
 
-            ],
-            // PM
-            [
-                'label'     => 'PM',
-                'type'      => 'select2',
-                'name'      => 'pm_id',
-                'entity'    => 'pm',
-                'attribute' => 'name',
-                'model'     => "App\Models\PM",
+        // $this->crud->addFields([
+        //     [
+        //         'name'  => 'no_polisi',
+        //         'label' => 'No Polisi',
+        //         'type' => 'text'
+        //     ],
+
+        //     // QS
+        //     [
+        //         'label'     => 'QS',
+        //         'type'      => 'select2',
+        //         'name'      => 'qs_id',
+        //         'entity'    => 'qs',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\QS",
 
 
-            ],
-
-            // GR
-            [
-                'label'     => 'GR',
-                'type'      => 'select2',
-                'name'      => 'gr_id',
-                'entity'    => 'gr',
-                'attribute' => 'name',
-                'model'     => "App\Models\GR",
-
-
-            ],
-
-            // Part
-            [
-                'label'     => 'Konfirmasi Part',
-                'type'      => 'select2',
-                'name'      => 'part_id',
-                'entity'    => 'part',
-                'attribute' => 'name',
-                'model'     => "App\Models\Part",
+        //     ],
+        //     // PM
+        //     [
+        //         'label'     => 'PM',
+        //         'type'      => 'select2',
+        //         'name'      => 'pm_id',
+        //         'entity'    => 'pm',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\PM",
 
 
-            ],
+        //     ],
 
-            // Part
-            [
-                'label'     => 'Pekerjaan Tambahan',
-                'type'      => 'select2',
-                'name'      => 'tambahan_id',
-                'entity'    => 'tambahan',
-                'attribute' => 'name',
-                'model'     => "App\Models\Tambahan",
-
-
-            ],
-            // Part
-            [
-                'label'     => 'Spooring & Balancing',
-                'type'      => 'select2',
-                'name'      => 'sbalance_id',
-                'entity'    => 'sbalance',
-                'attribute' => 'name',
-                'model'     => "App\Models\SBalance",
+        //     // GR
+        //     [
+        //         'label'     => 'GR',
+        //         'type'      => 'select2',
+        //         'name'      => 'gr_id',
+        //         'entity'    => 'gr',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\GR",
 
 
-            ],
+        //     ],
 
-            // Inspect
-            [
-                'label'     => 'Final Inspection',
-                'type'      => 'select2',
-                'name'      => 'inspect_id',
-                'entity'    => 'inspect',
-                'attribute' => 'name',
-                'model'     => "App\Models\Inspect",
-
-
-            ],
-
-            // Inspect
-            [
-                'label'     => 'Cuci',
-                'type'      => 'select2',
-                'name'      => 'cuci_id',
-                'entity'    => 'cuci',
-                'attribute' => 'name',
-                'model'     => "App\Models\Cuci",
+        //     // Part
+        //     [
+        //         'label'     => 'Konfirmasi Part',
+        //         'type'      => 'select2',
+        //         'name'      => 'part_id',
+        //         'entity'    => 'part',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Part",
 
 
-            ],
+        //     ],
 
-            // Inspect
-            [
-                'label'     => 'Delivery',
-                'type'      => 'select2',
-                'name'      => 'delivery_id',
-                'entity'    => 'delivery',
-                'attribute' => 'name',
-                'model'     => "App\Models\Delivery",
+        //     // Part
+        //     [
+        //         'label'     => 'Pekerjaan Tambahan',
+        //         'type'      => 'select2',
+        //         'name'      => 'tambahan_id',
+        //         'entity'    => 'tambahan',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Tambahan",
 
 
-            ],
+        //     ],
+        //     // Part
+        //     [
+        //         'label'     => 'Spooring & Balancing',
+        //         'type'      => 'select2',
+        //         'name'      => 'sbalance_id',
+        //         'entity'    => 'sbalance',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\SBalance",
 
-        ]);
+
+        //     ],
+
+        //     // Inspect
+        //     [
+        //         'label'     => 'Final Inspection',
+        //         'type'      => 'select2',
+        //         'name'      => 'inspect_id',
+        //         'entity'    => 'inspect',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Inspect",
+
+
+        //     ],
+
+        //     // Inspect
+        //     [
+        //         'label'     => 'Cuci',
+        //         'type'      => 'select2',
+        //         'name'      => 'cuci_id',
+        //         'entity'    => 'cuci',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Cuci",
+
+
+        //     ],
+
+        //     // Inspect
+        //     [
+        //         'label'     => 'Delivery',
+        //         'type'      => 'select2',
+        //         'name'      => 'delivery_id',
+        //         'entity'    => 'delivery',
+        //         'attribute' => 'name',
+        //         'model'     => "App\Models\Delivery",
+
+
+        //     ],
+
+        // ]);
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        // $this->crud->setFromDb();
+        $this->crud->setFromDb();
 
         // add asterisk for fields that are required in MobilRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
