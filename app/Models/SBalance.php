@@ -41,6 +41,11 @@ class SBalance extends Model
         return $this->belongsTo('App\Models\Mobil', 'mobil_id', 'id');
     }
 
+    public function process()
+    {
+        return $this->belongsTo('App\Models\Process', 'process_id', 'id');
+    }
+
     public function getStartAtAttribute()
     {
         return \Carbon\Carbon::parse($this->attributes['start_at'])->format('H:i');

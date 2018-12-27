@@ -3,16 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-
-// VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\ProcessRequest as StoreRequest;
 use App\Http\Requests\ProcessRequest as UpdateRequest;
 
-/**
- * Class ProcessCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
- */
+use App\Models\QS;
+use App\Models\PM;
+use App\Models\GR;
+use App\Models\Part;
+use App\Models\Mobil;
+use App\Models\Tambahan;
+use App\Models\SBalance;
+use App\Models\SAProcess;
+use App\Models\Inspect;
+use App\Models\Delivery;
+use App\Models\Cuci;
+
+
 class ProcessCrudController extends CrudController
 {
     public function setup()
@@ -50,6 +56,18 @@ class ProcessCrudController extends CrudController
             'attribute' => 'status', // foreign key attribute that is shown to user
             'model' => "App\Models\QS", // foreign key model
           ],
+          //
+          // [
+          //     'label'     => 'QS Start',
+          //     'type'      => 'datetime_picker',
+          //     'name'      => 'qstime_start',
+          // ],
+          //
+          // [
+          //     'label'     => 'QS Finish',
+          //     'type'      => 'datetime_picker',
+          //     'name'      => 'qstime_finish',
+          // ],
 
         ]);
 
@@ -64,26 +82,28 @@ class ProcessCrudController extends CrudController
             ],
 
             [
-                'label'     => 'QS Start',
-                'type'      => 'datetime_picker',
+                'label'     => 'QS',
+                'type'      => 'select2',
                 'name'      => 'qs_id',
                 'entity'    => 'qs',
-                'attribute' => 'start_at',
+                'attribute' => 'status',
                 'model'     => "App\Models\QS",
             ],
 
-            [
-                'label'     => 'QS Finish',
-                'type'      => 'datetime_picker',
-                'name'      => 'qs_id',
-                'entity'    => 'qs',
-                'attribute' => 'finish_at',
-                'model'     => "App\Models\QS",
-            ],
+            // [
+            //     'label'     => 'QS Start',
+            //     'type'      => 'datetime_picker',
+            //     'name'      => 'qstime_start',
+            // ],
+            //
+            // [
+            //     'label'     => 'QS Finish',
+            //     'type'      => 'datetime_picker',
+            //     'name'      => 'qstime_finish',
+            // ],
 
         ]);
 
-        // add asterisk for fields that are required in ProcessRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }

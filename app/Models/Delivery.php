@@ -34,10 +34,15 @@ class Delivery extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-   
-    public function mobil() 
+
+    public function mobil()
     {
         return $this->hasMany('App\Models\Mobil', 'id');
+    }
+
+    public function process()
+    {
+        return $this->belongsTo('App\Models\Process', 'process_id', 'id');
     }
 
     /*

@@ -65,6 +65,11 @@ class QS extends Model
         return $this->hasMany('App\Models\SAProcess', 'saprocess_id', 'id');
     }
 
+    public function process()
+    {
+        return $this->belongsTo('App\Models\Process', 'process_id', 'id');
+    }
+
 
 
 

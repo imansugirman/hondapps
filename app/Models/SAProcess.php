@@ -50,6 +50,11 @@ class SAProcess extends Model
         return $this->hasMany('App\Models\PM', 'pm_id', 'id');
     }
 
+    public function process()
+    {
+        return $this->belongsTo('App\Models\Process', 'process_id', 'id');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

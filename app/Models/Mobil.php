@@ -91,6 +91,11 @@ class Mobil extends Model
     {
         return $this->hasMany('App\Models\Tambahan', 'pekerjaan_id', 'id');
     }
+
+    public function process()
+    {
+        return $this->hasMany('App\Models\Process', 'process_id', 'id');
+    }
     //
     // public function sbalance()
     // {

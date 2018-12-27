@@ -45,6 +45,11 @@ class PM extends Model
         return $this->belongsTo('App\Models\Mobil', 'mobil_id', 'id');
     }
 
+    public function process()
+    {
+        return $this->belongsTo('App\Models\Process', 'process_id', 'id');
+    }
+
     // public function qs()
     // {
     //     return $this->belongsTo('App\Models\QS');
